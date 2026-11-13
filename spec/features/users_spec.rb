@@ -10,3 +10,11 @@ RSpec.feature "User want to create a new user successfully" do
     expect(page).to have_text("User was successfully created")
   end
 end
+
+RSpec.feature "User want to see all users created" do
+  scenario "User is on index page" do
+    visit new_user_path
+    click_link "Back"
+    expect(page).to have_content("Users")
+  end
+end
